@@ -189,7 +189,7 @@ def create_recommendation(min_days, stats_db_config, data_table):
     return "\n".join(recommendation)
 
 
-def run(url, username, password, port, numberofdays, customer):
+def run(url, username, password, port, numberofdays, company):
 
     try:
         numberofdays = int(numberofdays)
@@ -206,7 +206,7 @@ def run(url, username, password, port, numberofdays, customer):
         indexes = get_estimate_from_live_vmanage(session)
         stats_db_config = get_stats_db_configuration_from_live_vmanage(session)
 
-    destination_file = f"{customer}_db_estimator_report.csv"
+    destination_file = f"data/{company}_db_estimator_report.csv"
     filtered_stats_config = filter_config_from_indexes(indexes, stats_db_config)
     headers = parse_headers_from_indexes(indexes)
     data_table = parse_data_table(indexes, filtered_stats_config)
@@ -236,7 +236,7 @@ if __name__ == "__main__":
                 label="Min days [1, 7, 14, 30, 90, 180, 365]: ",
                 value=os.getenv("DB_MIN_DAYS", "7"),
             ),
-            gr.Textbox(label="Customer Name: ", value=os.getenv("CUSTOMER_NAME", "")),
+            gr.Textbox(label="Company Name: ", value=os.getenv("COMPANY_NAME", "")),
         ],
         outputs=[
             gr.Textbox(label="Current State: "),
