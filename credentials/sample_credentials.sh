@@ -1,0 +1,6 @@
+export VMANAGE_IP='vmanage-test.cisco.com'
+export VMANAGE_USER='sampleuser'
+export VMANAGE_PASSWORD='cisco123'
+export VMANAGE_PORT='443'
+export DB_MIN_DAYS='7'
+export CUSTOMER_NAME='ACME'
