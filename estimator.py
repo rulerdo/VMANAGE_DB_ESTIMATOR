@@ -8,7 +8,7 @@ import gradio as gr
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-def get_stats_db_configuration_from_live_vmanage(session):
+def get_stats_db_configuration(session):
 
     stats_db_config_endpoint = "/dataservice/management/elasticsearch/index/size"
     response = session.get(stats_db_config_endpoint)
@@ -204,7 +204,7 @@ def run(url, username, password, port, numberofdays, company):
     ) as session:
 
         indexes = get_estimate_from_live_vmanage(session)
-        stats_db_config = get_stats_db_configuration_from_live_vmanage(session)
+        stats_db_config = get_stats_db_configuration(session)
 
     destination_file = f"data/{company}_db_estimator_report.csv"
     filtered_stats_config = filter_config_from_indexes(indexes, stats_db_config)

@@ -2,6 +2,8 @@
 
 vManage DB Estimator is a Python-based tool designed to estimate database requirements for Cisco SD-WAN vManage deployments. This tool provides a user-friendly GUI to simplify the estimation process.
 
+It uses the cisco-catalyst-wan-sdk to connect to a live Manager instance, retrieves database statistics, and provides recommendations for storage allocation based on the number of days of data retention specified by the user.
+
 ## Features
 
 - Estimates storage requirements for different data retention periods.
@@ -20,10 +22,12 @@ VMANAGE_DB_ESTIMATOR/
 ├── requirements.txt      # Dependencies required for the project
 ├── README.md             # Project documentation
 ├── LICENSE.txt           # License information
-├── assets/               # Images and other assets for the project
-│   ├── main_interface_image.png
-│   └── results_view_image.png
-└── data/                 # Sample data or output files
+├── examples/             # Images and other assets for the project
+│   ├── inputs.png
+│   └── results.png
+│   └── sample_credetials.sh
+│   └── sample_csv_report.csv
+└── data/                 # Output files
 ```
 
 ## Installation
@@ -74,17 +78,17 @@ VMANAGE_DB_ESTIMATOR/
 
 5. Review the results displayed on the right side of the GUI, open the csv report to view all details.
 
-## Screenshots
+## Examples
 
-### Main Interface
+### Inputs
 
 ![Inputs](examples/inputs.png)
 
-### Results View
+### Results
 
 ![Results](examples/results.png)
 
-![Sample CSV report](examples/sample_csv_report.csv)
+[Sample CSV report](examples/sample_csv_report.csv)
 
 ## License
 
