@@ -94,7 +94,7 @@ VMANAGE_DB_ESTIMATOR/
 
 ## License
 
-This project is licensed under the terms specified in the [license file](./LICENSE.txt)
+This project is licensed under the terms specified in the [license file](./license.txt)
 
 ## Contributing
 
