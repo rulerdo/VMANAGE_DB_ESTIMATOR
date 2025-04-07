@@ -67,12 +67,14 @@ VMANAGE_DB_ESTIMATOR/
 
 3. Input the following parameters in the GUI.
 
+    ```plaintext
     vManage Host: The IP or hostname of the vManage instance.
     Username: The username for authentication.
     Password: The password for authentication.
     Port: The port number for the vManage instance.
     Min days: The minimum number of days for data retention (options: 1, 7, 14, 30, 90, 180, 365).
     Company Name: The name of the customer for the report.
+    ```
 
 4. Click on submit to connect to vManage and calculate the storage requirements.
 
